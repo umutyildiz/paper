@@ -1,5 +1,9 @@
 ####Bacon Ipsum as a Service
 
+:construction: This is work in progress :construction:
+
+Latest PDF: [![PDF Status](https://www.sharelatex.com/github/repos/arfon/paper/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/arfon/paper/builds/latest/output.pdf)
+
 _Arfon M. Smith_
 
 Bacon ipsum dolor amet short loin shank flank ground round. Leberkas rump cow tongue short ribs, ground round turducken pancetta. Boudin tri-tip hamburger jerky, short loin alcatra pastrami bresaola strip steak landjaeger chuck venison ham hock fatback cupim. Picanha filet mignon andouille tri-tip, cupim doner prosciutto bacon. Shankle pancetta pastrami brisket cupim fatback.
