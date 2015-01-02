@@ -24,24 +24,15 @@
 
 \addtolength{\topmargin}{-0.875in}
 \addtolength{\textheight}{1.75in}
-    
-\verbdef{\jsonexample}|{ "name": "Daniel S. Katz" } |
-\verbdef{\name}|"name" |
-\verbdef{\keywords}|"keywords" |
+
 \setlength{\droptitle}{-40pt}
 
 % Don't use tt font for urls
 \urlstyle{rm}
 
-\title{Implementing Transitive Credit with JSON-LD \vspace{-0.2cm}}
+\title{Bacon Ipsum as a Service \vspace{-0.2cm}}
 
 \author{
-Daniel S. Katz\\
-National Science Foundation;\\
-Computation Institute, University of Chicago \&\\
-Argonne National Laboratory\\
-\url{d.katz@ieee.org}
-\and
 Arfon Smith\\
 GitHub Inc.\\
 \url{arfon@github.com}
@@ -57,152 +48,55 @@ GitHub Inc.\\
 \begin{abstract}
 
 \noindent
-Science and engineering research increasingly relies on activities that facilitate research but are not currently rewarded or recognized, such as: data sharing; developing common data resources, software and methodologies; and annotating data and publications.   
-To promote and advance these activities, we must develop mechanisms for assigning credit, facilitate the appropriate attribution of research outcomes, devise incentives for activities that facilitate research, and allocate funds to maximize return on investment. In this article, we focus on addressing the issue of assigning credit for both direct and indirect contributions, specifically by using JSON-LD to implement a prototype transitive credit system.
+Bacon ipsum dolor amet boudin dolor ball tip enim consectetur, landjaeger cupim magna rump ut velit veniam. Laborum id kielbasa exercitation. Tongue id sunt, exercitation eu pariatur kevin meatloaf enim magna voluptate deserunt venison fatback pancetta. Ball tip meatloaf proident anim ham eu frankfurter adipisicing magna laborum irure duis reprehenderit in flank. Pork chop rump drumstick pork pork loin boudin. Porchetta deserunt bacon veniam ullamco esse in anim pork chop frankfurter. Tri-tip cow lorem corned beef frankfurter, ut ea shank est.
 \end{abstract}
 
 \section{Introduction}
 
-Science and engineering research increasingly relies on activities that facilitate research but are not currently rewarded or recognized. This includes the sharing of data; development of common data resources, software and methodologies; and annotation of data and publications. This situation has been documented in a number of recent reports~\cite{NSF_software_vision, WSSSPE1} that focus on changing needs and mechanisms for attribution and citation of digital products, from the use of alternative metrics~\cite{altmetrics} that track reports of research impact apart from research publications, to work on data~\cite{nrc_data}. About half of the articles in many recent issues of Science describe research that depended on software, and a larger fraction analyze data. Indeed, the US National Science Foundation recently updated its guide to proposers to instruct them to provide a list of their ``products''---objects that are ``citable and accessible including but not limited to publications, data sets, software, patents, and copyrights''---rather than publications~\cite{nsf_gpg}.  
+Consequat drumstick sint aliqua enim ipsum ut. Adipisicing turkey deserunt, biltong swine cow sirloin. Consequat sirloin est mollit. Pork loin salami anim aliquip leberkas tail tenderloin pancetta ipsum meatloaf doner ea kielbasa. Magna eiusmod reprehenderit in, kevin ut ham meatloaf ut aute. Id pastrami magna pig laboris beef ribs pork loin ribeye.
 
-To promote and advance pursuit of activities that facilitate research, we must develop mechanisms for assigning credit, facilitate the appropriate attribution of research outcomes, devise incentives for activities that facilitate research, and allocate funds to maximize return on investment. In this article, we explore how the idea of transitive credit~\cite{Katz2_WSSSPE, Katz2_WSSSPE_JORS}, which would credit both direct and indirect contributions, can be implemented.
+Beef ribs dolor jowl aliqua doner incididunt pork loin cow magna sunt cupidatat meatloaf quis. Ea capicola in doner. Nostrud pork chop chicken shank velit sed. Sirloin ut sint, tongue consequat drumstick commodo pariatur turducken in. Qui ham hock cillum anim irure ut aliquip.
 
+\section{Bacon Ipsum}
 
-\section{Transitive Credit}
+Ribeye sirloin cupim laboris est, dolore cow nulla brisket aliquip sed leberkas spare ribs pork loin sausage. Bresaola eu aliqua sirloin, sausage jerky boudin filet mignon chuck aute doner. Velit t-bone shoulder consectetur in. Picanha incididunt meatball exercitation beef mollit dolore ullamco esse salami labore in venison leberkas ut.
 
-Transitive credit involves three main elements.  The first is complete credit. Any product should list all authors (as currently listed as authors of a paper), all contributors (as currently listed in the acknowledgements of a paper) and all component products that have been used, including both publications and other products such as software and data (as currently either cited, acknowledged, or not included in a paper). We coin the term ``contriponents'' for the combination of these contributors and components (though we eagerly welcome suggestions for a better term).
+Corned beef tail salami beef hamburger. Ground round adipisicing qui ad eu landjaeger. Beef ribs est landjaeger short ribs anim et pork chop cupim sunt exercitation non nostrud filet mignon. Sint enim hamburger voluptate, swine shoulder pork chop sausage nisi est flank. Magna duis deserunt, pariatur biltong meatball laborum chuck spare ribs tri-tip adipisicing proident picanha jowl.
 
-Second, all the contriponents need to have weights assigned.
-Determining how to weight credit of the authors may be difficult, but it should be possible. 
-Methods for doing this weighting, whether using a taxonomy or a more traditional list of authors, and analysis of these methods and their impact would likely happen if this overall idea moves forward.
-Just as publications today are submitted by one person who is responsible for making sure all authors are listed (and perhaps assigned roles in a taxonomy) and the publication is complete, the submitter would also be responsible for registering this fractional credit, no matter how the values are determined.
+Velit turducken beef ribs ipsum, laborum sirloin pork chop pork loin pariatur. Est shoulder ullamco venison in adipisicing. Ullamco tail sint pariatur ball tip boudin pork chop pancetta voluptate nostrud. Doner lorem porchetta, salami sed eiusmod landjaeger excepteur strip steak pork ball tip short ribs laborum pig. Alcatra ullamco do in, turkey short ribs irure spare ribs eu shankle ball tip ex dolore sirloin. Hamburger fatback ut irure brisket ham hock ham alcatra andouille landjaeger shank.
 
-The third element of transitive credit is its transitive nature, as is shown, for example, by how the credit map for a product A, which is used by a product B, feeds into the credit map for product B. Suppose product A is a software package equally written by two authors and its credit map is that 50\% of the credit for this should go the lead developer, 20\% to the second developer, and 10\% to the third developer. In addition, 5\% should go to each of the four libraries that are needed to run the code. When this product is created and registered, this credit map is registered along with it.  Product B is a paper that obtains new science results, and it depended on Product A. The person who registers the publication also registers its credit map, in this case 75\% to her/himself, and 25\% to the software code previously mentioned. Credit is now transitive, in that the lead software developer of the code can be given credit for 12.5\% of the paper. If another paper is later written that extends the product B paper and gives 10\% credit to that paper, the lead software package developer will also have 1.25\% credit for the new paper.
+In flank eu tempor. Ball tip meatloaf swine ut dolor ea anim pig, tail aliquip jowl nisi. Laborum jerky filet mignon duis sint. Esse andouille flank shoulder. Tempor fugiat filet mignon, spare ribs ground round beef prosciutto.
 
-The value of transitive credit is in measuring the indirect contributions to a product, which today are not quantitatively captured. Because they aren't captured, they aren't rewarded, and there is a disincentive to perform them, due to the cost (in time or something else). If they were captured, this disincentive would be replaced by an incentive, which for software and data would mean to publish and share them in a reusable form.
+In ribeye alcatra sirloin, reprehenderit ipsum hamburger fatback eu boudin prosciutto cillum capicola laborum id. In brisket doner tempor pig alcatra. Jerky officia pork chop nisi eu labore duis. Nisi filet mignon prosciutto andouille pariatur brisket mollit proident ground round venison elit bresaola. Kevin labore swine est pork loin. Chicken laboris eiusmod, nisi sunt eu turducken enim deserunt meatloaf officia qui dolore anim.
 
-Transitive credit could be implemented by adding either creditmaps to the metadata stored with DOIs~\cite{DOI-data-model}, or alternatively by building a separate system to store creditmaps and then adding pointers to entries in this system to the metadata stored in DOIs. Here, we focus on the creditmap itself, and how it can be described in a structured, machine (and human) readable form.
+\section{Ribeye}
 
-\section{JSON-LD}
+Pastrami porchetta landjaeger aliquip sirloin pariatur, ham lorem exercitation. Ut deserunt brisket pancetta ullamco flank anim beef ribs. Shoulder picanha pork chop meatball, pork loin frankfurter kevin chuck salami incididunt deserunt ham hock. Fatback id eu in adipisicing sint ham sed short ribs. Fugiat cupidatat officia tongue lorem tri-tip.
 
+Pork loin excepteur lorem, adipisicing ut officia pancetta aute deserunt qui. Shankle chuck ground round anim, ex brisket ipsum pork belly. Magna sausage ham hock bresaola consectetur spare ribs aute exercitation incididunt lorem ham. In pork flank swine, tail cupidatat velit elit cillum quis. Culpa pork loin enim cupim hamburger in.
 
-JSON-LD (JavaScript Object Notation for Linked Data, \url{http://json-ld.org}) is an extension to the key-value based JSON document format that provides a way of describing machine-readable information with semantic context. Popular as an alternative to XML in the web development community, JSON is also used as a base data format for search engines such as Elastic Search~\cite{elasticsearch} and NoSQL data stores such as MongoDB~\cite{mongodb}.
+Prosciutto sed pig sausage sunt, occaecat jerky doner biltong. Cupidatat boudin ea, magna pork chop ipsum ex sausage tail short loin cillum irure. Salami eu veniam fugiat elit alcatra pastrami kielbasa fatback deserunt velit est officia irure ad. Brisket in cupim dolor, sunt turducken laboris cupidatat ut jowl lorem occaecat pig doner. Short loin sint salami leberkas porchetta laborum. Excepteur aliqua enim, labore ut veniam bacon ut anim dolore corned beef et velit strip steak. Biltong tongue jowl dolor brisket.
 
-In the final stages of standardization at W3C~\cite{w3c}, JSON-LD is designed to lower the barrier for data publishers who wish to provide `Linked Data' so that concepts and entities can be identified with certainty. As an example of machine readable data with semantics take this JSON snippet describing a person: \jsonexample . Without additional \textit{context} there is ambiguity as to what the \name term describes (such as the name of a person, place or thing). A better alternative is:
+Jowl flank laboris t-bone. Bresaola salami mollit pariatur turkey rump leberkas boudin pig ipsum ribeye aliqua. Eu turkey tongue ham cillum ribeye sed exercitation pork belly bresaola alcatra ipsum. Leberkas id turkey ground round brisket in turducken kevin in consequat dolore pork loin porchetta sausage reprehenderit. Beef turducken short ribs, turkey ut beef ribs ribeye aliquip mollit enim deserunt. Eiusmod ribeye nostrud exercitation eu meatball pork loin shank ex. Elit kevin cupim occaecat tempor pastrami alcatra.
 
-{\footnotesize
-\begin{verbatim}
-{
-  "@context": "http://schema.org",
-  "@type": "Person",
-  "name": "Daniel S. Katz",
-  "@id": "http://orcid.org/0000-0001-5934-7525"
- }
-\end{verbatim}
-}
+Pariatur ut adipisicing dolore porchetta aliqua sint ipsum officia. Labore ham hock hamburger, meatloaf occaecat quis in flank alcatra ad landjaeger. Nisi boudin adipisicing dolor sirloin consectetur. Spare ribs deserunt labore, beef ribs pancetta andouille flank boudin. Jerky quis officia pork belly turducken dolore hamburger, nostrud turkey tenderloin swine ex. Sint pork loin dolore andouille, anim lorem eiusmod prosciutto turducken.
 
+Mollit minim commodo, hamburger pancetta in salami prosciutto enim ribeye biltong. Nisi excepteur est capicola picanha beef. Sausage reprehenderit magna drumstick prosciutto mollit pastrami esse sunt nulla veniam beef ribs hamburger. Consectetur enim in rump, lorem aute est. Eiusmod sausage kielbasa shoulder. Tongue alcatra dolore sed occaecat ground round. Jowl kevin consequat doner ham salami minim ham hock adipisicing meatloaf strip steak brisket chuck porchetta beef.
 
-\section{Using JSON-LD for Transitive Credit}
+Sed tri-tip salami cillum. Kielbasa nulla jerky drumstick proident shank qui in sint duis. Fugiat commodo eu id beef ribs doner elit turkey in qui aute in meatball bacon. Ribeye excepteur tenderloin, sirloin et qui chicken hamburger.
 
-Smith recently proposed using JSON-LD for research tools~\cite{arfon-json-ld-blog}. In this paper, we extend this idea to suggest that it could be used for transitive credit of any scholarly product. Because of namespaced nature of the JSON-LD structure, it is trivial to include all contriponents such as datasets, software, and articles with their appropriate semantic context definition while maintainting a both human and machine-readable structure. Note that we use vocabularies from \url{http://schema.org} for the different entities; other examples include DOAP (\url{https://github.com/edumbill/doap}) and SPDX (\url{http://spdx.org}).
+Pariatur biltong dolore incididunt ea. Sausage turkey doner minim ad. Landjaeger corned beef nostrud cupim dolore quis. Frankfurter excepteur ham cupidatat dolor.
 
-A subset (due to space limits) of a possible creditmap for this article follows, as an illustrative example of the power of this concept. 
+Spare ribs culpa meatball, do jowl in ball tip commodo tenderloin sunt anim duis beef ribs turducken. Sed jowl andouille elit pancetta, eiusmod dolore duis tail. In in shank chicken adipisicing pork belly. Sausage ex enim proident, nostrud ipsum tenderloin corned beef fugiat. Andouille chicken sint pork laboris esse do nostrud cupim ground round venison ut sunt pork loin.
 
-{\footnotesize
-\begin{verbatim}
-{
-  "@context": "http://schema.org",
-  "@type": "ScholarlyArticle",
-  "headline": "Implementing Transitive Credit with JSON-LD",
-  "dateCreated": "2014-07-10",
-  "keywords": "transitive credit, credit for code, json-ld, linked data",
-  "author": [
-    {
-    "@context": "http://schema.org",
-    "@type": "Person",
-    "name": "Daniel S. Katz",
-    "@id": "http://orcid.org/0000-0001-5934-7525",
-    "email": "d.katz@ieee.org"
-    "creditWeight": "0.25"
-    },
-    {
-    "@context": "http://schema.org",
-    "@type": "Person",
-    "name": "Arfon Smith",
-    "@id": "http://orcid.org/0000-0002-7217-4494",
-    "email": "arfon@github.com",
-    "creditWeight": "0.25"
-    }
-  ],
-  "citation": {
-    "articles": [
-      {
-        "@context": "http://schema.org",
-        "@type": "ScholarlyArticle",
-        "headline": "Transitive credit as a means to address social and technological 
-            concerns stemming from citation and attribution of digital products",
-        "doi": "10.5334/jors.be",
-        "creditWeight": "0.3"
-      }
-    ],
-    "software": [
-      {
-        "@context": "http://schema.org",
-        "@type": "Code",
-        "name": "Fidgit",
-        "codeRepository": "https://github.com/arfon/fidgit",
-        "license": "http://opensource.org/licenses/MIT",
-        "creditWeight": "0.04"
-      }
-    ],
-    "acknowledgment": [
-      {
-        "@context": "http://schema.org",
-        "@type": "Person",
-        "name": "James Howison",
-        "@id": "http://orcid.org/0000-0002-5702-149X",
-        "email": "james@howison.name",
-        "creditWeight": "0.01"
-      }
-    ],
-    "other": [
-      {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "JSON-LD for software discovery, reuse and credit",
-        "url": "http://www.arfon.org/json-ld-for-software-discovery-reuse-and-credit",
-        "license": "http://creativecommons.org/licenses/by/4.0/",
-        "creditWeight": "0.15"
-      }
-    ]
-  }
-}
-\end{verbatim}
-}
-
+Commodo andouille turducken dolor jerky, mollit consequat esse ipsum. Lorem tail pork belly flank tri-tip, elit venison meatloaf ut salami occaecat fatback picanha minim. Exercitation fatback venison esse. Dolore biltong aute, dolor prosciutto drumstick tail minim chuck alcatra ut. Kevin cow jowl velit, ea shank deserunt elit aute officia consectetur sausage chuck ut pig.
 
 \section{Conclusions}
 
-In this paper we have outlined a mechanism for ascribing complete credit for all contriponents that have led to a scholarly product.
-%
-This is one of the needed elements to a transient credit system.  This credit information could be stored as part of the metadata within the DOI system, perhaps by updating the kernel metadata and adding a creditmap entry to the DOI data dictionary~\cite{DOI-data-model}, though note that this is a standardization activity which requires community effort, similar to that being undertaken today by CASRAI (\url{http://casrai.org}) and others. Then, creditmap information would need to be added by registration authorities (RAs) that hold these scholarly products (i.e., publishers of all sorts, including journals, data archivers).  And it needs to be supported by indexing systems (e.g., Thomson Reuters). Similar complementary changes have also been discussed recently aimed at characterizing contributions rather than assigning  weights~\cite{contributorship-taxonomy}.
-
-The manner in which we use unique IDs is somewhat rough; we use ORCIDs for people and DOIs for papers, but for other elements, such as software that may have have a DOI, the solution is not clear.
-Additionally, the manner in which weights are assigned is also rough; it might be easier to assign weights within categories, then assign weights to categories, and let the system determine the detailed weights.
-
-While this paper addresses the technical aspects of how to make transitive credit possible, many social questions remain unresolved. For example, disciplinary communities will need to decide what the contriponents are that are relevant to their discipline, how to weigh various categories of contriponents (e.g., are developers more, equally, or less important than libraries?), and how the authors of products should assign weights to specific product contriponents (e.g., reference 1 is more/less important to a manuscript than reference 2). 
-
-One potential extension to this creditmap we have proposed would be to replace the~\keywords entry to include a description of the subject area from a defined taxonomy. When appropriate, such as in the case of software, this could also include a description of the function of the tool. Using indexing tools such as Elastic Search~\cite{elasticsearch}, it would then be possible to build indexes of these fields and then make powerful faceted searches such as `find astrophysics software, written in Python designed to manipulate spectroscopic data'.
-
-Finally, we note that our proposal in this paper is very compatible with the current altmetrics activities~\cite{altmetrics}, and would add to the alternative metrics that could be collected and analyzed.
+Bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon bacon. 
 
 \section*{Acknowledgments}
 
-The authors thanks James Howison, Gabrielle Allen, and David Proctor for some discussions about this work.
-%
-Some work by Katz was supported by the National Science Foundation (NSF) while working at the Foundation; any opinion, finding, and conclusions or recommendations expressed in this material are those of the author and do not necessarily reflect the views of the NSF.
-
-\bibliographystyle{plain}
-\bibliography{wssspe_paper}
+The authors thanks http://baconipsum.com for their service.
 
 \end{document}
