@@ -1,6 +1,8 @@
 
-####Implementing Transitive Credit with JSON-LD
+Bacon Ipsum as a Service
 
-_Daniel S. Katz, Arfon M. Smith_
+_Arfon M. Smith_
 
-Science and engineering research increasingly relies on activities that facilitate research but are not currently rewarded or recognized, such as: data sharing; developing common data resources, software and methodologies; and annotating data and publications. To promote and advance these activities, we must develop mechanisms for assigning credit, facilitate the appropriate attribution of research outcomes, devise incentives for activities that facilitate research, and allocate funds to maximize return on investment. In this article, we focus on addressing the issue of assigning credit for both direct and indirect contributions, specifically by using JSON-LD to implement a prototype transitive credit system.
+Bacon ipsum dolor amet short loin shank flank ground round. Leberkas rump cow tongue short ribs, ground round turducken pancetta. Boudin tri-tip hamburger jerky, short loin alcatra pastrami bresaola strip steak landjaeger chuck venison ham hock fatback cupim. Picanha filet mignon andouille tri-tip, cupim doner prosciutto bacon. Shankle pancetta pastrami brisket cupim fatback.
+
+Boudin shank pork belly beef ribs beef doner ham hock picanha capicola swine pork ground round cupim venison brisket. Shoulder bresaola ground round, flank sausage pastrami tail tenderloin pancetta beef venison landjaeger. Prosciutto sausage frankfurter, cow landjaeger cupim ham meatloaf shankle tri-tip tail capicola andouille. Short ribs salami sausage, corned beef pork chop pancetta tri-tip cupim. Hamburger pig doner andouille short loin porchetta tri-tip pork shoulder filet mignon bresaola fatback. Turkey tri-tip chuck sirloin, flank corned beef t-bone chicken pork chop porchetta venison meatloaf prosciutto. Jowl pork belly ham bresaola rump ham hock.
